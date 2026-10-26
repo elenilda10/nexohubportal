@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 830" role="img" aria-labelledby="title desc">
+<title id="title">Interface ilustrativa do Save Vid DL</title>
+<desc id="desc">Celular com conversa de bot, visualização de vídeo, arquivos recebidos e cartões decorativos de fotos e áudio.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#574BE8"/><stop offset=".52" stop-color="#262B70"/><stop offset="1" stop-color="#14254A"/></linearGradient>
+  <linearGradient id="phone" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#1D2745"/><stop offset="1" stop-color="#060D20"/></linearGradient>
+  <linearGradient id="poster" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2BCDBE"/><stop offset=".45" stop-color="#547DDF"/><stop offset="1" stop-color="#5545AC"/></linearGradient>
+  <linearGradient id="photo" x1=".1" y1="0" x2=".9" y2="1"><stop stop-color="#FFE1A7"/><stop offset=".54" stop-color="#F38C96"/><stop offset="1" stop-color="#8B66D3"/></linearGradient>
+  <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FBFCFF" stop-opacity=".24"/><stop offset="1" stop-color="#C9DAFF" stop-opacity=".04"/></linearGradient>
+  <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="18"/></filter>
+  <filter id="soft" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="7"/></filter>
+  <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="#FFF" opacity=".16"/></pattern>
+</defs>
+<circle cx="414" cy="404" r="322" fill="#6960EC" opacity=".25" filter="url(#shadow)"/>
+<circle cx="430" cy="392" r="310" fill="none" stroke="#AFA7FF" stroke-opacity=".19" stroke-width="2"/>
+<circle cx="430" cy="392" r="247" fill="none" stroke="#70F1D6" stroke-opacity=".11" stroke-width="2"/>
+<path d="M90 130 Q360 5 735 165" fill="none" stroke="#A89FFF" stroke-opacity=".2" stroke-width="1.5" stroke-dasharray="5 13"/>
+<g transform="rotate(-10 438 412)">
+<rect x="249" y="39" width="382" height="749" rx="60" fill="#060B1A" opacity=".53" filter="url(#shadow)"/>
+<rect x="245" y="31" width="380" height="748" rx="57" fill="#050917" stroke="#8793D0" stroke-width="7"/>
+<rect x="259" y="48" width="352" height="712" rx="44" fill="url(#phone)"/>
+<rect x="353" y="57" width="166" height="26" rx="13" fill="#050917"/>
+<circle cx="476" cy="70" r="4" fill="#354B6C"/>
+<text x="297" y="85" fill="#DBE5FE" font-size="15" font-family="sans-serif" font-weight="700">9:41</text>
+<path d="M545 76h12m5-5v10" stroke="#E1EAFE" stroke-width="2" stroke-linecap="round"/>
+<rect x="570" y="70" width="21" height="12" rx="4" stroke="#E1EAFE" stroke-width="1.5" fill="none"/>
+<rect x="572" y="72" width="15" height="8" rx="2" fill="#71E6C9"/>
+<path d="M284 114h304" stroke="#8EA4D5" stroke-opacity=".23"/>
+<circle cx="302" cy="148" r="21" fill="#7665EA"/>
+<path d="m296 158v-20l15 20v-20" fill="none" stroke="#FFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="333" y="145" fill="#F6F7FF" font-size="19" font-family="sans-serif" font-weight="700">Save Vid DL</text>
+<text x="333" y="162" fill="#6CE8C9" font-size="11" font-family="sans-serif">Bot · Telegram</text>
+<circle cx="565" cy="148" r="3.5" fill="#9BAAD4"/><circle cx="565" cy="158" r="3.5" fill="#9BAAD4"/>
+<rect x="282" y="192" width="286" height="56" rx="17" fill="#203553"/>
+<text x="300" y="215" font-size="13" font-family="sans-serif" fill="#DFEBFF">Olá! Cole o link para baixar 👋</text>
+<text x="300" y="234" font-size="11" font-family="sans-serif" fill="#90A6CE">Vídeos · Fotos · Música · Arquivos</text>
+<rect x="338" y="265" width="241" height="47" rx="17" fill="#7066DB"/>
+<text x="355" y="287" font-size="12" font-family="sans-serif" fill="#FFFFFF">https://exemplo.com/video</text>
+<text x="504" y="303" font-size="10" font-family="sans-serif" fill="#E5E2FF">✓✓ 09:41</text>
+<rect x="281" y="330" width="292" height="313" rx="19" fill="#192B45" stroke="#3D5C85" stroke-opacity=".6"/>
+<rect x="292" y="342" width="270" height="176" rx="13" fill="url(#poster)"/>
+<path d="M294 472c54-37 98-120 155-94s57 20 113-39v179H294z" fill="#0F335A" opacity=".37"/>
+<circle cx="427" cy="422" r="37" fill="#F9FDFF" opacity=".9"/>
+<path d="m418 400 30 22-30 22z" fill="#3949A3"/>
+<text x="307" y="547" font-size="16" font-weight="700" font-family="sans-serif" fill="#F3F7FF">Vídeo pronto para enviar</text>
+<text x="307" y="565" font-size="12" font-family="sans-serif" fill="#9FB4D0">Vídeo · 00:42 · MP4</text>
+<rect x="303" y="579" width="247" height="47" rx="12" fill="#655DE2"/>
+<text x="375" y="607" font-size="13" font-family="sans-serif" fill="#FFF" font-weight="700">↓ Baixar mídia</text>
+<rect x="282" y="669" width="290" height="55" rx="18" fill="#14213B" stroke="#40506F"/>
+<text x="301" y="701" fill="#93A9C9" font-family="sans-serif" font-size="13">Mensagem</text>
+<circle cx="548" cy="695" r="15" fill="#6CDED2"/>
+<path d="m542 694 12-5-4 13-2-5z" fill="#12314B"/>
+</g>
+<g transform="rotate(9 152 364)">
+<rect x="41" y="284" width="206" height="189" rx="23" fill="#122540" stroke="#BAC7FF" stroke-opacity=".35" stroke-width="2"/>
+<rect x="54" y="297" width="180" height="124" rx="13" fill="url(#photo)"/>
+<circle cx="195" cy="330" r="20" fill="#FFF3C9" opacity=".8"/>
+<path d="M54 400 109 347l44 45 32-30 49 48v11H54z" fill="#8160A8" opacity=".83"/>
+<path d="M54 405 118 367l45 54H54z" fill="#4D4A9B" opacity=".78"/>
+<text x="66" y="445" font-family="sans-serif" font-size="16" font-weight="700" fill="#F5F6FF">Fotos e álbuns</text>
+<text x="66" y="462" font-family="sans-serif" font-size="11" fill="#A7B7D2">Carrosséis compatíveis</text>
+</g>
+<g transform="rotate(-7 697 529)">
+<rect x="623" y="425" width="192" height="190" rx="25" fill="#122540" stroke="#B8C8FF" stroke-opacity=".4" stroke-width="2"/>
+<circle cx="719" cy="487" r="40" fill="#265B68"/>
+<circle cx="719" cy="487" r="30" fill="#51E1CA"/>
+<circle cx="719" cy="487" r="9" fill="#1B3C53"/>
+<path d="M652 556c14-19 24 20 38-1s20-25 34 1 23-17 38 0" fill="none" stroke="#7CCFF4" stroke-width="5" stroke-linecap="round"/>
+<text x="655" y="590" font-family="sans-serif" font-size="15" font-weight="700" fill="#F4F7FF">Áudio e MP3</text>
+</g>
+<g transform="rotate(8 663 193)">
+<rect x="630" y="150" width="172" height="89" rx="18" fill="#ECF5FF" stroke="#BCC9F6" stroke-opacity=".45"/>
+<rect x="644" y="165" width="41" height="55" rx="10" fill="#786AEC"/>
+<path d="M665 177v24m-8-8 8 8 8-8" fill="none" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="694" y="183" font-family="sans-serif" font-weight="700" font-size="12" fill="#253550">Salvo!</text>
+<text x="694" y="201" font-family="sans-serif" font-size="10" fill="#526A88">Mídia recebida</text>
+<text x="694" y="217" font-family="sans-serif" font-size="10" fill="#526A88">no Telegram</text>
+</g>
+<g fill="#9FECE4"><path d="m129 165 8 22 22 8-22 8-8 22-8-22-22-8 22-8z" opacity=".72"/><circle cx="745" cy="700" r="7" opacity=".62"/><circle cx="85" cy="580" r="5" opacity=".65"/></g>
+</svg>
