@@ -1,3 +1,4 @@
+import { renderHomeNext } from "./home-next.js";
 import { config, bots, notices, faqs, releases, roadmap } from "./data.js";
 import { createExtraPages } from "./extras.js";
 import { renderSaveVidDetails } from "./savevid-detail.js";
@@ -128,51 +129,7 @@ function sectionTitle(eyebrow, title, subtitle, href = "", actionText = "") {
 }
 
 function home() {
-  const latest = getNotices().slice(0, 2);
-  return `<section class="hero"><div class="hero-grid container">
-    <div class="hero-copy">
-      <span class="hero-label"><span class="pulse-dot"></span> BEM-VINDO AO NEXOHUB <span class="hero-label-rule"></span></span>
-      <h1>Seus bots.<br><span class="gradient-text">Um só universo.</span></h1>
-      <p>Conheça nossos projetos, acompanhe atualizações e encontre tudo que precisa em uma central feita para você.</p>
-      <div class="hero-buttons">${link("/bots", "Explorar projetos")}${link("/avisos", "Ver novidades", "button button-outline", "arrow-up-right")}</div>
-      <div class="hero-trust"><div class="hero-mini-icons"><span>${icon("download", 15)}</span><span>${icon("music", 15)}</span><span>${icon("trophy", 15)}</span></div><span>${bots.length} projetos reunidos em um só lugar</span></div>
-      <a href="/bots/savevid" data-nav class="hero-brand-teaser" aria-label="Explorar as redes sociais do Save Vid DL">
-        ${["Instagram","YouTube e YouTube Music","TikTok"].map(name=>`<span>${brandLogo(name,{size:20,decorative:true})}</span>`).join("")}
-        <strong>Redes, música e downloads ${icon("arrow-up-right",15)}</strong>
-      </a>
-    </div>
-    <div class="hero-visual" aria-label="Prévia da central de projetos NexoHub">
-      <div class="visual-orbit orbit-one"></div><div class="visual-orbit orbit-two"></div>
-      <div class="visual-shine"></div>
-      <div class="visual-window">
-        <div class="window-top"><div class="traffic-lights"><i></i><i></i><i></i></div><span>nexohub / central</span>${icon("layers", 16)}</div>
-        <div class="window-inner"><div class="window-heading"><div><small>SEUS PROJETOS</small><strong>Explore o NexoHub</strong></div><span class="window-badge">Explore</span></div>
-        ${bots.map((bot) => `<div class="window-project accent-${escapeHtml(bot.accent)}"><span class="window-icon">${icon(bot.icon, 19)}</span><div><strong>${escapeHtml(bot.name)}</strong><small>${escapeHtml(bot.category)}</small></div><span class="window-arrow">${icon("arrow-up-right", 15)}</span></div>`).join("")}
-        <div class="window-notice">${icon("sparkles", 16)} <span>Novidades e avisos em um só lugar</span></div></div>
-      </div>
-      <div class="float-label float-one">${icon("zap", 15)} Conectado ao seu dia a dia</div>
-      <div class="float-label float-two">${icon("bell", 15)} Fique por dentro</div>
-    </div>
-  </div></section>
-  <section class="intro-strip"><div class="container intro-grid">
-    <div><span class="intro-icon">${icon("layers", 21)}</span><strong>Tudo centralizado</strong><small>Seus projetos em um só lugar</small></div>
-    <div><span class="intro-icon">${icon("bell", 21)}</span><strong>Avisos importantes</strong><small>Informações organizadas</small></div>
-    <div><span class="intro-icon">${icon("zap", 21)}</span><strong>Sempre evoluindo</strong><small>Novidades e melhorias</small></div>
-  </div></section>
-  <section class="section projects-section" id="projetos"><div class="container">
-    ${sectionTitle("NOSSOS PROJETOS", "Um ecossistema de possibilidades.", "Cada projeto tem seu próprio propósito. Descubra o que podemos oferecer.", "/bots", "Ver todos")}
-    <div class="bot-grid">${bots.map(botCard).join("")}</div>
-  </div></section>
-  <section class="section news-section"><div class="container">
-    ${sectionTitle("FIQUE POR DENTRO", "Últimas notícias da central.", "Comunicados, avisos e novidades para você acompanhar.", "/avisos", "Todos os avisos")}
-    <div class="notices-grid">${latest.map(noticeCard).join("")}</div>
-  </div></section>
-  ${extras.homeExtras()}
-  <section class="section"><div class="container"><div class="suggest-banner">
-    <div class="suggest-light"></div>
-    <div class="suggest-icon">${icon("send", 24)}</div><div class="suggest-copy"><span class="eyebrow">SUA VOZ IMPORTA</span><h2>Tem uma ideia? Queremos ouvir.</h2><p>Sugira plataformas para o Save Vid, recursos para outros bots ou melhorias para nossos projetos. Vamos avaliar a viabilidade de cada sugestão.</p></div>
-    ${link(encodeMailto("Sugestão de plataforma ou melhoria — NexoHub"), "Enviar sugestão", "button button-light", "arrow-up-right")}
-  </div></div></section>`;
+  return renderHomeNext({ bots, getNotices, icon, link, sectionTitle, botCard, noticeCard, extras, escapeHtml, brandLogo, encodeMailto });
 }
 
 function botList() {
