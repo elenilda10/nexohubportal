@@ -33,6 +33,25 @@ function notice(text,isError=false){
  clearTimeout(notice._timer);
  notice._timer=setTimeout(()=>el.className="toast",5000);
 }
+
+async function createLoginProof(password) {
+  const challenge=await api("/api/admin/challenge");
+  if(!/^[a-f0-9]{32}$/i.test(challenge.salt)|| !Number.isSafeInteger(challenge.iterations)||challenge.iterations<100000||challenge.iterations>400000) {
+    throw new Error("Desafio de autenticação inválido.");
+  }
+  const salt=Uint8Array.from(challenge.salt.match(/../g),hex=>parseInt(hex,16));
+  const baseKey=await crypto.subtle.importKey("raw",new TextEncoder().encode(password),"PBKDF2",false,["deriveBits"]);
+  const derived=new Uint8Array(await crypto.subtle.deriveBits({name:"PBKDF2",salt,iterations:challenge.iterations,hash:"SHA-256"},baseKey,256));
+  try {
+    const signer=await crypto.subtle.importKey("raw",derived,{name:"HMAC",hash:"SHA-256"},false,["sign"]);
+    const message="nexohub-login-v1:"+challenge.id+":"+window.location.origin;
+    const signature=new Uint8Array(await crypto.subtle.sign("HMAC",signer,new TextEncoder().encode(message)));
+    return {id:challenge.id,proof:[...signature].map(x=>x.toString(16).padStart(2,"0")).join("")};
+  } finally {
+    derived.fill(0);
+  }
+}
+
 function loginPage(configured=true) {
  logoutButton.hidden=true;
  root.innerHTML='<section class="auth-wrap"><div class="auth-art"><div class="glow"></div><span class="kicker">NEXOHUB STUDIO</span><h1>Seu espaço para <em>gerenciar.</em></h1><p>Atualize seus bots, publique novidades e organize o portal sem editar arquivos do GitHub.</p><div class="auth-info">🔒 Acesso privado · Sessão segura</div></div><form id="login-form" class="login-card"><div class="login-emblem">N</div><span class="kicker">ACESSO ADMINISTRATIVO</span><h2>Bem-vindo de volta.</h2><p>Entre com a senha administrativa para continuar.</p>'+
@@ -43,7 +62,8 @@ function loginPage(configured=true) {
   ev.preventDefault();const button=ev.currentTarget.querySelector("button");
   if(!button)return;button.disabled=true;button.textContent="Verificando...";
   try{
-   await api("/api/admin/login",{method:"POST",body:JSON.stringify({password:document.getElementById("password").value})});
+   const proof=await createLoginProof(document.getElementById("password").value);
+   await api("/api/admin/login",{method:"POST",body:JSON.stringify(proof)});
    await loadDashboard();
   }catch(e){document.getElementById("login-error").textContent=e.message;}
   finally{button.disabled=false;button.textContent="Entrar no painel →";}
