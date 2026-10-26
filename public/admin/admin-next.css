@@ -1,0 +1,54 @@
+/* NexoHub Studio — editorial visual alignment; no authentication behavior modified. */
+:root{--st-bg:#0a0d15;--st-surface:#111621;--st-elevated:#1a202d;--st-border:#ffffff19;--st-ink:#f3f4fa;--st-muted:#abb0c1;--st-accent:#ab9cf9}
+body{background:radial-gradient(circle at 90% 0,rgba(130,105,214,.12),transparent 43%),var(--st-bg);color:var(--st-ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:-.015em}
+.admin-top{min-height:75px;background:#0d101ce8;border-bottom:1px solid var(--st-border);backdrop-filter:blur(20px);padding-inline:clamp(17px,4vw,62px)}
+.admin-brand strong{letter-spacing:-.065em;font-size:23px}
+.admin-brand strong span{color:var(--st-accent)}
+.admin-brand small{color:#c8bbff;background:#a99af322;border-radius:99px;padding:5px 9px}
+.brand-symbol{border-radius:13px;background:linear-gradient(125deg,#b4a4fc,#7667de);color:#151324;box-shadow:0 9px 26px #6d5fd42b}
+.button{border-radius:11px;font-weight:740;padding:12px 17px}
+.button.primary{background:#f0efff;color:#181724}
+.button.primary:hover{background:#dcd6fc}
+.button.subtle{background:var(--st-surface);color:var(--st-ink);border:1px solid var(--st-border)}
+.admin-main{max-width:1580px}
+.auth-wrap{gap:70px}
+.kicker,.number{color:var(--st-accent);letter-spacing:.13em}
+.auth-art h1{letter-spacing:-.075em;font-weight:770;line-height:1.08}
+.auth-art h1 em{background:linear-gradient(115deg,#c3b7ff,#89e8dc);background-clip:text;-webkit-background-clip:text}
+.auth-art p{color:var(--st-muted)}
+.auth-info{background:var(--st-surface);border:1px solid var(--st-border);color:var(--st-muted)}
+.login-card{background:var(--st-surface);border:1px solid var(--st-border);border-radius:18px;box-shadow:0 27px 70px #0004}
+.login-card h2{letter-spacing:-.06em}
+.login-card p{color:var(--st-muted)}
+.login-emblem{background:linear-gradient(135deg,#a99cff,#6c5bd0);border-radius:14px}
+.login-card input,.form-field input,.form-field textarea,.form-field select{background:#0e121d;border:1px solid var(--st-border);border-radius:10px;color:var(--st-ink)}
+.login-card input:focus,.form-field :is(input,textarea,select):focus{border-color:var(--st-accent)}
+.admin-layout{grid-template-columns:252px minmax(0,1fr)}
+.sidebar{background:#0e121c;border-right:1px solid var(--st-border);padding:27px 16px}
+.side-title{color:#8d93a8}
+.side-tab{border-radius:10px;font-size:13px;color:var(--st-muted)}
+.side-tab>span{color:var(--st-accent)}
+.side-tab.active,.side-tab:hover{background:#242536;color:#fff}
+.side-footer{border-color:var(--st-border)}
+.workspace{background:transparent}
+.workspace h1,.workspace h2,.workspace h3{letter-spacing:-.05em}
+.workspace :is(.toolbar,.editor-card,.summary-card,.stat-card,.dashboard-card,.list-card,.entry-card,.panel){border-color:var(--st-border);border-radius:14px}
+.workspace :is(input,textarea,select){border-radius:10px}
+.workspace :is(.button,.side-tab){transition:background .18s,transform .18s,border-color .18s}
+.center-card{color:var(--st-muted)}
+.center-card .spinner{border-top-color:var(--st-accent)}
+/* Credential setup page */
+body>main{max-width:890px;padding-top:66px}
+body>main h1{font-size:clamp(36px,5vw,62px);letter-spacing:-.068em;line-height:1.07}
+body>main h2{letter-spacing:-.042em}
+body>main p{color:var(--st-muted)}
+body>main .brand{color:var(--st-ink)}
+body>main .brand span{color:var(--st-accent)}
+body>main .card{background:var(--st-surface);border:1px solid var(--st-border);border-radius:17px;padding:30px}
+body>main input{background:#0e121d;color:var(--st-ink);border:1px solid var(--st-border)}
+body>main .button{background:#e7e2ff;color:#191724;font-weight:760}
+body>main .button.secondary{background:var(--st-elevated);color:var(--st-ink);border:1px solid var(--st-border)}
+body>main code{background:#232337;color:#c5beff}
+@media(max-width:860px){.admin-layout{grid-template-columns:1fr}.sidebar{border-right:0;border-bottom:1px solid var(--st-border)}.auth-wrap{gap:35px}}
+@media(max-width:600px){.admin-top{padding:12px 16px;min-height:66px}.admin-brand strong{font-size:20px}.admin-brand small{font-size:9px}.auth-wrap{padding:40px 18px}.login-card{padding:24px}.auth-art h1{font-size:42px}body>main{padding:43px 17px 70px}body>main .card{padding:22px}}
+@media(prefers-reduced-motion:reduce){.workspace *, .login-card *{transition:none!important}}
