@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="700" viewBox="0 0 880 700" role="img" aria-labelledby="title desc">
+<title id="title">Ilustração do Save Vid DL em um celular</title><desc id="desc">Prévia ilustrativa de links e mídias organizadas em um aplicativo de mensagens.</desc>
+<defs>
+<linearGradient id="glass" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#1b2950"/><stop offset="1" stop-color="#101930"/></linearGradient>
+<linearGradient id="purple" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9c81ff"/><stop offset="1" stop-color="#57dccd"/></linearGradient>
+<linearGradient id="screen" x1="0" y1="0" x2=".7" y2="1"><stop stop-color="#162440"/><stop offset="1" stop-color="#0c162c"/></linearGradient>
+<linearGradient id="thumb" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#4040b1"/><stop offset=".52" stop-color="#8166d4"/><stop offset="1" stop-color="#51cbbb"/></linearGradient>
+<filter id="shadow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="17"/></filter>
+<filter id="cardShadow" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="24" stdDeviation="22" flood-color="#07101f" flood-opacity=".42"/></filter>
+</defs>
+<circle cx="452" cy="328" r="285" fill="#6555ff" opacity=".16" filter="url(#shadow)"/>
+<circle cx="422" cy="309" r="230" fill="none" stroke="#9b95fd" stroke-opacity=".2" stroke-width="2"/>
+<circle cx="422" cy="309" r="286" fill="none" stroke="#78ddd4" stroke-opacity=".12" stroke-width="2"/>
+<g transform="translate(264 18)" filter="url(#cardShadow)">
+<rect x="0" y="0" width="355" height="652" rx="51" fill="#070b15" stroke="#556186" stroke-width="4"/>
+<rect x="12" y="12" width="331" height="628" rx="43" fill="url(#screen)"/>
+<rect x="124" y="14" width="108" height="27" rx="15" fill="#070b15"/>
+<text x="33" y="40" fill="#cbd4ef" font-family="Arial,sans-serif" font-size="14" font-weight="bold">9:41</text>
+<g fill="#cad5ec"><rect x="283" y="30" width="4" height="9" rx="2"/><rect x="290" y="26" width="4" height="13" rx="2"/><rect x="297" y="23" width="4" height="16" rx="2"/><rect x="309" y="27" width="19" height="11" rx="3" stroke="#cad5ec" stroke-width="1" fill="none"/><rect x="311" y="29" width="13" height="7" rx="2"/></g>
+<rect x="12" y="53" width="331" height="63" fill="#1b2b47"/>
+<path d="M35 83h19m-19 0 8-8m-8 8 8 8" stroke="#adb9e7" stroke-width="2.3" stroke-linecap="round" fill="none"/>
+<circle cx="87" cy="85" r="21" fill="url(#purple)"/>
+<path d="M86 74v18m-6-6 6 6 6-6" stroke="#0b1530" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<text x="119" y="82" font-family="Arial,sans-serif" font-size="16" font-weight="bold" fill="#fafaff">Save Vid DL</text>
+<text x="119" y="100" font-family="Arial,sans-serif" font-size="11" fill="#76e5ce">● Bot • prévia de interface</text>
+<g>
+<rect x="31" y="144" width="262" height="58" rx="17" fill="#263959"/>
+<text x="47" y="167" font-family="Arial,sans-serif" font-size="13" fill="#f2f4ff">Olá! Envie um link para iniciar</text>
+<text x="47" y="187" font-family="Arial,sans-serif" font-size="12" fill="#a9c0df">Vídeos • Fotos • Áudio • Arquivos</text>
+<rect x="96" y="222" width="238" height="65" rx="17" fill="#39625d"/>
+<text x="113" y="247" font-family="Arial,sans-serif" font-size="12" fill="#dbfff5">https://exemplo.com/video</text>
+<text x="113" y="268" font-family="Arial,sans-serif" font-size="11" fill="#aedacc">Link enviado ✓✓</text>
+<rect x="31" y="307" width="263" height="234" rx="18" fill="#253656"/>
+<rect x="41" y="317" width="243" height="141" rx="13" fill="url(#thumb)"/>
+<path d="M51 439 109 368l45 45 46-69 75 97Z" fill="#a3deec" opacity=".34"/>
+<circle cx="230" cy="352" r="32" fill="#fff" opacity=".13"/>
+<circle cx="159" cy="389" r="28" fill="#111b35" opacity=".76"/>
+<path d="m152 375 22 14-22 14Z" fill="#fff"/>
+<text x="46" y="484" font-family="Arial,sans-serif" font-size="13" font-weight="bold" fill="#f4f6ff">Conteúdo encontrado</text>
+<text x="46" y="506" font-family="Arial,sans-serif" font-size="12" fill="#b7c5e4">Escolha o formato disponível</text>
+<rect x="45" y="516" width="101" height="28" rx="10" fill="#5552bd"/>
+<text x="73" y="535" font-family="Arial,sans-serif" font-size="11" font-weight="bold" fill="#fff">Vídeo</text>
+<rect x="158" y="516" width="105" height="28" rx="10" fill="#3a7b7e"/>
+<text x="188" y="535" font-family="Arial,sans-serif" font-size="11" font-weight="bold" fill="#eafff9">Áudio</text>
+<rect x="31" y="567" width="292" height="48" rx="17" fill="#1d2d4b" stroke="#43567d"/>
+<text x="48" y="594" font-family="Arial,sans-serif" font-size="13" fill="#8ea7ca">Mensagem</text>
+<circle cx="299" cy="591" r="13" fill="#6655db"/>
+<path d="m293 591 11-5-4 11-3-4Z" fill="#fff"/>
+</g>
+</g>
+<g filter="url(#cardShadow)">
+<rect x="62" y="128" width="216" height="98" rx="21" fill="url(#glass)" stroke="#6870a7"/>
+<circle cx="100" cy="164" r="23" fill="#6c62cb" opacity=".32"/>
+<path d="M100 152v25m-9-9 9 9 9-9" stroke="#bdb3ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<text x="132" y="166" fill="#fff" font-family="Arial,sans-serif" font-size="16" font-weight="bold">Mídias</text>
+<text x="132" y="188" fill="#aebee0" font-family="Arial,sans-serif" font-size="12">Organizadas</text>
+</g>
+<g filter="url(#cardShadow)">
+<rect x="603" y="212" width="239" height="113" rx="22" fill="url(#glass)" stroke="#597e9a"/>
+<rect x="625" y="235" width="48" height="48" rx="15" fill="#4dc5b6" opacity=".24"/>
+<path d="M635 267c18-29 21 18 30-18" stroke="#7cf9d9" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+<text x="685" y="254" fill="#fff" font-family="Arial,sans-serif" font-size="15" font-weight="bold">MP3 e áudio</text>
+<text x="685" y="277" fill="#aebee0" font-family="Arial,sans-serif" font-size="12">Quando disponível</text>
+<rect x="626" y="294" width="195" height="3" rx="2" fill="#34496d"/><rect x="626" y="294" width="120" height="3" rx="2" fill="#63dfc9"/>
+</g>
+<g filter="url(#cardShadow)">
+<rect x="48" y="452" width="230" height="100" rx="20" fill="url(#glass)" stroke="#626ca6"/>
+<rect x="68" y="473" width="53" height="54" rx="12" fill="#7e75ed" opacity=".28"/>
+<rect x="79" y="484" width="30" height="28" rx="5" fill="none" stroke="#c8c4ff" stroke-width="2"/><path d="m82 506 8-9 6 5 5-7 6 11" fill="none" stroke="#c8c4ff" stroke-width="2"/>
+<text x="135" y="496" fill="#fff" font-family="Arial,sans-serif" font-size="15" font-weight="bold">Álbuns</text>
+<text x="135" y="516" fill="#aebee0" font-family="Arial,sans-serif" font-size="12">Fotos e vídeos</text>
+</g>
+<g transform="translate(650 470)">
+<circle cx="60" cy="61" r="45" fill="#67dccc" opacity=".12"/><circle cx="60" cy="61" r="29" fill="none" stroke="#79e6d2" stroke-opacity=".7" stroke-width="2" stroke-dasharray="4 5"/>
+<path d="M45 61h30m-15-15v30" stroke="#77ebd3" stroke-width="3" stroke-linecap="round"/>
+</g>
+</svg>
