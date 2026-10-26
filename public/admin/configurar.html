@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="theme-color" content="#0a0f1d"><title>Ativar painel | NexoHub</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+:root{color-scheme:dark}*{box-sizing:border-box}
+body{background:radial-gradient(ellipse at top,#23254c,#0b1120 65%);margin:0;color:#f0f2ff;font:15px/1.65 system-ui,-apple-system,sans-serif}
+main{max-width:820px;margin:auto;padding:40px 20px 90px}
+a{color:#bbb3ff}h1{font-size:clamp(30px,5vw,48px);line-height:1.15;margin:15px 0}h2{font-size:21px;margin-top:0}p{color:#abb9d1}
+.brand{font-size:18px;font-weight:900;color:#e9eaff}.brand span{color:#8de0d4}
+.card{padding:26px;border-radius:18px;border:1px solid #b2c6ff28;background:#152039;margin:23px 0}
+.number{color:#afabff;font-size:12px;font-weight:900;letter-spacing:.1em}.warning{background:#3c3330;border:1px solid #ffd39c44;border-radius:12px;padding:12px 15px;color:#f5d7a9;font-size:13px}
+label{display:block;font-weight:750;font-size:13px;color:#dce4f7;margin:19px 0 7px}
+input{font:inherit;width:100%;border-radius:12px;outline:0;background:#091322;border:1px solid #c2ceff48;padding:12px;color:#f9faff}
+.button{display:inline-flex;justify-content:center;align-items:center;gap:7px;background:#ada5ff;color:#0b1325;border:0;border-radius:10px;padding:12px 16px;font-weight:850;cursor:pointer;margin-top:12px;font:inherit}
+.button.secondary{background:#263753;color:#f3f5ff;border:1px solid #bdcaff3b}
+.secret{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center}
+.secret .button{margin:0}.result{font-size:13px;color:#9db4cf;margin:17px 0 0}
+ol{padding-left:20px;color:#bbc7df}li{margin:10px 0}code{overflow-wrap:anywhere;background:#080f20;padding:3px 6px;border-radius:5px;color:#a7e5df}
+@media(max-width:530px){.card{padding:21px}.secret{grid-template-columns:1fr}.secret .button{width:100%}}
+</style>
+</head><body><main>
+<a href="/admin" class="brand">Nexo<span>Hub</span> Studio ↖</a>
+<h1>Ativar o painel administrativo</h1>
+<p>Essa ativação é feita apenas por você, no painel da Cloudflare. A senha é gerada no seu próprio navegador e nunca será enviada ao NexoHub.</p>
+<div class="warning">Não compartilhe capturas de tela mostrando a senha ou as duas variáveis privadas abaixo. Guarde sua senha em um gerenciador seguro.</div>
+<section class="card"><span class="number">ETAPA 01</span><h2>Gerar credenciais seguras</h2>
+<p>Clique no botão. O navegador criará uma senha aleatória, um hash PBKDF2 para validação e a chave de sessão. O servidor guardará apenas o hash e a chave, não a senha original.</p>
+<button id="generate" class="button" type="button">Gerar minhas credenciais</button>
+<div id="result" hidden>
+<label for="password">Sua senha de administrador — guarde somente para você</label>
+<div class="secret"><input id="password" readonly autocomplete="off" spellcheck="false"><button class="button secondary" data-copy="password">Copiar</button></div>
+<label for="hash">ADMIN_PASSWORD_HASH — variável privada na Cloudflare</label>
+<div class="secret"><input id="hash" readonly autocomplete="off" spellcheck="false"><button class="button secondary" data-copy="hash">Copiar</button></div>
+<label for="session-secret">ADMIN_SESSION_SECRET — variável privada na Cloudflare</label>
+<div class="secret"><input id="session-secret" readonly autocomplete="off" spellcheck="false"><button class="button secondary" data-copy="session-secret">Copiar</button></div>
+<p class="result" id="copy-status" role="status"></p>
+</div></section>
+<section class="card"><span class="number">ETAPA 02</span><h2>Salvar duas variáveis no Pages</h2>
+<ol>
+<li>Abra <a target="_blank" rel="noopener noreferrer" href="https://dash.cloudflare.com/">Cloudflare Dashboard</a> e selecione <strong>Workers & Pages → nexohub</strong>.</li>
+<li>Entre em <strong>Settings → Variables and Secrets</strong> (ou Environment variables).</li>
+<li>Na configuração de <strong>Production</strong>, crie <code>ADMIN_PASSWORD_HASH</code> e cole o valor gerado. Selecione o tipo <strong>Secret</strong>, quando disponível.</li>
+<li>Crie <code>ADMIN_SESSION_SECRET</code> e cole o segundo valor. Também deve ser do tipo <strong>Secret</strong>.</li>
+<li>Salve e faça um novo deploy de produção para aplicar as variáveis. O binding D1 <code>CMS_DB</code> já foi criado.</li>
+</ol></section>
+<section class="card"><span class="number">ETAPA 03</span><h2>Entrar e importar o conteúdo</h2>
+<p>Abra <a href="/admin">/admin</a>, entre com sua senha e clique em <strong>Importar conteúdo inicial</strong> na primeira visita. Depois, poderá editar bots, avisos, perguntas, atualizações e planejamento.</p>
+<p>Se perder sua senha, gere um novo conjunto de credenciais e substitua as duas variáveis na Cloudflare. Os dados no D1 continuarão preservados.</p>
+</section>
+</main>
+<script>
+const result=document.getElementById("result");
+const alphabet="ABCDEFGHJKLMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789";
+const hex=b=>Array.from(b,x=>x.toString(16).padStart(2,"0")).join("");
+function randomString(size) {const bytes=new Uint8Array(size);crypto.getRandomValues(bytes);return Array.from(bytes,b=>alphabet[b%alphabet.length]).join("");}
+document.getElementById("generate").onclick=async()=>{
+ const button=document.getElementById("generate");
+ button.disabled=true;button.textContent="Gerando credenciais...";
+ try{
+  const password=randomString(32),salt=crypto.getRandomValues(new Uint8Array(16)),secret=crypto.getRandomValues(new Uint8Array(48));
+  const key=await crypto.subtle.importKey("raw",new TextEncoder().encode(password),"PBKDF2",false,["deriveBits"]);
+  const hash=new Uint8Array(await crypto.subtle.deriveBits({name:"PBKDF2",salt,iterations:150000,hash:"SHA-256"},key,256));
+  document.getElementById("password").value=password;
+  document.getElementById("hash").value="pbkdf2$150000$"+hex(salt)+"$"+hex(hash);
+  document.getElementById("session-secret").value=hex(secret);
+  document.getElementById("copy-status").textContent="Credenciais geradas localmente. Guarde sua senha antes de fechar a página.";
+  result.hidden=false;
+ }catch{alert("Não foi possível gerar as credenciais neste navegador.");}
+ finally{button.disabled=false;button.textContent="Gerar novamente";}
+};
+document.querySelectorAll("[data-copy]").forEach(b=>b.addEventListener("click",async()=>{
+ const input=document.getElementById(b.dataset.copy);
+ try{await navigator.clipboard.writeText(input.value);document.getElementById("copy-status").textContent="Copiado para a área de transferência. Não compartilhe."; }
+ catch{input.select();document.getElementById("copy-status").textContent="Selecione e copie o campo manualmente.";}
+}));
+</script></body></html>
